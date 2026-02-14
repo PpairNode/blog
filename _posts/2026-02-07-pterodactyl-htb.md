@@ -23,7 +23,7 @@ PORT     STATE    SERVICE
 80/tcp open http
 ```
 
-- Add to `/etc/hosts` our target
+Adding to `/etc/hosts` our target
 ```bash
 echo '<ip> pterodactyl.htb' | sudo tee /etc/hosts -a
 ```

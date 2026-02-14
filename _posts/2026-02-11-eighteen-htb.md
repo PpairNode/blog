@@ -17,8 +17,7 @@ Machine Information
 As is common in real life Windows penetration tests, you will start the Eighteen box with credentials for the following account: kevin / iNa2we6haRj2gaw!
 
 # Scan
-- Full scan
-
+Full scan:
 ```bash
 sudo nmap -n -sS -Pn -p- -oN scan.txt 10.129.6.13
 
@@ -29,8 +28,8 @@ PORT     STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 600.23 seconds
 ```
-- Rapid scan windows
 
+Rapid scan windows:
 ```bash
 sudo nmap -n -sS -Pn -p21,22,53,80,88,135,139,143,443,445,1433,1521,3128,3306,3389,8080,8443 -oN win_scan.txt --open 10.129.6.13
 
@@ -39,8 +38,7 @@ PORT     STATE SERVICE
 1433/tcp open  ms-sql-s
 ```
 
-- Scpecialized scan
-
+Scpecialized scan:
 ```bash
 nmap -n -sV -sC -Pn -p80,1433,5985 10.129.6.13
 Starting Nmap 7.95SVN ( https://nmap.org ) at 2026-02-11 05:17 EST
@@ -89,8 +87,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.09 seconds
 We are against a `Domain Controller` machine.
 
 
-- Add to `/etc/hosts` our target
-
+Adding to `/etc/hosts` our target
 ```bash
 echo '<ip> eighteen.htb DC01.eighteen.htb' | sudo tee /etc/hosts -a
 ```
