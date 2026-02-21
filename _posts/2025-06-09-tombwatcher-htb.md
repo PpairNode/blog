@@ -11,6 +11,7 @@ image:
 # Overview
 TombWatcher is the 4th machine of HackTheBox Season 8.
 > Level: medium
+
 > OS: windows
 
 # Scan

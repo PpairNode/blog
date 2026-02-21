@@ -11,6 +11,7 @@ image:
 # Overview
 Pterodactyl is the 2nd machine of HackTheBox Season 10.
 > Level: medium
+
 > OS: linux
 
 # Scan

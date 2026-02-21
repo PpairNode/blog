@@ -11,6 +11,7 @@ image:
 # Overview
 WingData is the 3rd machine of HackTheBox Season 10.
 > Level: easy
+
 > OS: linux
 
 # Scan

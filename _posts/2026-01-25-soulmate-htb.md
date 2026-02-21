@@ -11,6 +11,7 @@ image:
 # Overview
 Soulmate is a machine of HackTheBox.
 > Level: easy
+
 > OS: linux
 
 # Scan

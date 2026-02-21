@@ -11,6 +11,7 @@ image:
 # Overview
 Eighteen is the 9th machine of HackTheBox Season 9.
 > Level: easy
+
 > OS: windows
 
 Machine Information

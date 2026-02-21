@@ -11,6 +11,7 @@ image:
 # Overview
 Expressway is the 1st machine of HackTheBox Season 9.
 > Level: easy
+
 > OS: linux
 
 
