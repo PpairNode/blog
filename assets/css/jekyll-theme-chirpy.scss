@@ -221,3 +221,7 @@
 .post-preview::after {
   display: none !important;
 }
+.card-text.post-content {
+  color: var(--text-muted-color) !important;
+  opacity: 0.9;
+}
