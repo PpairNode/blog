@@ -351,3 +351,312 @@
   box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
   transform: translateY(-2px);
 }
+
+// CATEGORIES
+#page-category h1,
+#page-tag h1,
+#archives h1 {
+  font-family: 'Courier New', monospace;
+  color: #00ff00 !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #00ff00;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+.card.categories,
+.card.tags {
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(0, 255, 0, 0.2) !important;
+  transition: all 0.3s ease;
+}
+.card.categories:hover,
+.card.tags:hover {
+  border-color: #00ff00 !important;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  transform: translateY(-5px);
+}
+.categories a,
+.tags a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+  padding-left: 0.5rem;
+}
+.categories a:hover,
+.tags a:hover {
+  color: #00ff00 !important;
+  border-left: 2px solid #00ff00;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+// ARCHIVES
+#archives .year {
+  font-family: 'Courier New', monospace;
+  color: #00ff00 !important;
+  font-size: 1.5rem;
+  border-left: 4px solid #00ff00;
+  padding-left: 1rem;
+  margin: 2rem 0 1rem 0;
+}
+#archives .month {
+  color: var(--text-muted-color);
+  font-family: 'Courier New', monospace;
+}
+#archives li a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+#archives li a:hover {
+  color: #00ff00 !important;
+  padding-left: 0.5rem;
+  text-decoration: none;
+}
+
+// TAGS
+.tag-cloud a {
+  background: rgba(0, 255, 0, 0.1) !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ff00 !important;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+.tag-cloud a:hover {
+  background: rgba(0, 255, 0, 0.2) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+  transform: scale(1.05);
+}
+#tags .tag-item,
+.tag-item a {
+  background: rgba(0, 255, 0, 0.1) !important;
+  border: 2px solid #00ff00 !important;
+  color: #00ff00 !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+#tags .tag-item:hover,
+.tag-item a:hover {
+  background: rgba(0, 255, 0, 0.25) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5) !important;
+  transform: scale(1.05) !important;
+}
+a.tag {
+  background: rgba(0, 255, 0, 0.1) !important;
+  border: 2px solid #00ff00 !important;
+  color: #00ff00 !important;
+  font-family: 'Courier New', monospace !important;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  margin: 0.5rem !important;
+  text-transform: uppercase !important;
+}
+
+a.tag:hover {
+  background: rgba(0, 255, 0, 0.25) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5) !important;
+  transform: scale(1.05) !important;
+}
+
+a.tag .text-muted {
+  color: rgba(0, 255, 0, 0.6) !important;
+}
+
+// BREADCRUMB (liens en haut de page)
+#breadcrumb {
+  font-family: 'Courier New', monospace !important;
+}
+#breadcrumb span,
+#breadcrumb a {
+  color: #00ff00 !important;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+#breadcrumb a:hover {
+  color: #00ff00 !important;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+#breadcrumb::before {
+  content: "> ";
+  color: #00ff00;
+  margin-right: 0.5rem;
+}
+
+// CATEGORY PAGES
+.category,
+#page-category {
+  h1 {
+    font-family: 'Courier New', monospace;
+    color: #00ff00 !important;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 3px solid #00ff00;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+.category .list-group-item,
+#page-category .list-group-item {
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(0, 255, 0, 0.2) !important;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+.category .list-group-item:hover,
+#page-category .list-group-item:hover {
+  border-color: #00ff00 !important;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  transform: translateX(5px);
+}
+.category .list-group-item a,
+#page-category .list-group-item a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+.category .list-group-item:hover a,
+#page-category .list-group-item:hover a {
+  color: #00ff00 !important;
+}
+
+// CATEGORY/TAG SUBPAGES
+ul.content {
+  list-style: none;
+  padding: 0;
+}
+ul.content li {
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+ul.content li::before {
+  display: none;
+}
+ul.content li:hover {
+  border-color: #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  transform: translateX(10px);
+}
+ul.content li a,
+ul.content li a:link,
+ul.content li a:visited {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+ul.content li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; // All the <li> become clickable
+}
+ul.content li:hover a,
+ul.content li:hover a:link,
+ul.content li:hover a:visited,
+ul.content li a:hover,
+ul.content li a:hover:link,
+ul.content li a:hover:visited {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+}
+ul.content li .dash {
+  border-bottom: 1px dashed rgba(0, 255, 0, 0.3);
+  margin: 0 1rem;
+}
+ul.content li time {
+  color: var(--text-muted-color);
+  font-family: 'Courier New', monospace;
+  position: relative;
+  z-index: 2;
+}
+ul.content li:hover time {
+  color: rgba(0, 255, 0, 0.7);
+}
+ul.content li a,
+ul.content li a:link,
+ul.content li a:visited,
+ul.content li a:active,
+ul.content li a:focus {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+ul.content li:hover a,
+ul.content li:hover a:link,
+ul.content li:hover a:visited,
+ul.content li:hover a:active,
+ul.content li:hover a:focus,
+ul.content li a:hover,
+ul.content li a:hover:link,
+ul.content li a:hover:visited,
+ul.content li a:hover:active,
+ul.content li a:hover:focus {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+}
+ul.content li a * {
+  color: inherit !important;
+}
+#page-category ul.content li a,
+#page-category ul.content li a:link,
+#page-category ul.content li a:visited,
+#page-category ul.content li a:active,
+#page-category ul.content li a:focus {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+#page-category ul.content li:hover a,
+#page-category ul.content li:hover a:link,
+#page-category ul.content li:hover a:visited,
+#page-category ul.content li:hover a:active,
+#page-category ul.content li:hover a:focus,
+#page-category ul.content li a:hover {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+#page-category ul.content li a,
+#page-category ul.content li a:hover {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+#page-category ul.content li a::selection {
+  background: rgba(0, 255, 0, 0.2) !important;
+  color: #00ff00 !important;
+}
+#page-category ul.content li:hover a,
+#page-category ul.content li a:hover {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+}
+
