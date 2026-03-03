@@ -1,18 +1,16 @@
 ---
-title: Pirate (R) - HTB
+title: Pirate - HTB
 date: 2026-03-02
 categories: [WriteUps, HTB]
 tags: [HTB, windows, AD, privesc]
 image:
-  path: /assets/img/posts/htb/pirate/pirate_full.png
+  base: /assets/img/posts/htb/pirate
 active: true
+difficulty: hard
+os: windows
+description: "Pirate is the 5th machine of HackTheBox Season 10."
+pawned: root
 ---
 
-![Pirate Pawned](/assets/img/posts/htb/pirate/pirate_pwned.png){: data-lightbox="false"}
 
-# Overview
-Pirate is the 5th machine of HackTheBox Season 10.
-> Level: hard
-
-> OS: Windows
 

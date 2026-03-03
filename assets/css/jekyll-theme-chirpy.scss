@@ -1,0 +1,223 @@
+---
+---
+
+@use 'main';
+
+
+// DEACTIVATE IMAGE GLOW (automatic with chirpy)
+.shimmer::before {
+  background: none !important;
+}
+
+// HEADER
+.custom-header-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 0;
+    background: transparent;
+}
+.custom-header-image-container-image {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    object-fit: cover;
+}
+.custom-header {
+  display: block;
+}
+.title-badges-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hacker-title {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ee00;
+  text-shadow: none;
+  margin: 0;
+}
+.terminal-date {
+  font-family: 'Courier New', monospace;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.prompt {
+  color: #ff0000;
+  font-weight: bold;
+}
+.terminal-text {
+  font-family: 'Courier New', monospace;
+  color: #ccc;
+  border-left: 3px solid #00ff00;
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+.machine-info {
+  margin: 0;
+  display: flex;
+  gap: 0.75rem;
+}
+
+
+// BADGE VISUAL
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.badge-icon {
+  font-size: 1.1rem;
+}
+.difficulty-easy { 
+  background: #000; 
+  color: #2be410; 
+  border-color: #2be410;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.2);
+}
+.difficulty-medium { 
+  background: #000; 
+  color: #ffa500; 
+  border-color: #ffa500;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.2);
+}
+.difficulty-hard { 
+  background: #000; 
+  color: #ff0000; 
+  border-color: #ff0000;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
+}
+.os-windows { 
+  background: #000; 
+  color: #0078d4; 
+  border-color: #0078d4;
+  box-shadow: 0 0 8px rgba(0, 120, 212, 0.2);
+}
+.os-linux { 
+  background: #000; 
+  color: #fcc624; 
+  border-color: #fcc624;
+  box-shadow: 0 0 8px rgba(252, 198, 36, 0.2);
+}
+
+
+// DEACTIVATE IMAGE GREY BACKGROUND (automatic with chirpy)
+.no-popup .popup {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+.no-popup .shimmer::before {
+    display: none !important;
+}
+.no-popup a.popup {
+    pointer-events: none;
+}
+
+
+// FOOTER ALERT
+.alert-active-machine {
+  margin-top: 60px;
+  padding: 25px;
+  border-radius: 12px;
+  background: #1a0000;
+  border: 2px solid #ff1a1a;
+  // box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  animation: pulseAlert 2s infinite;
+}
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #ff4d4d;
+}
+.alert-icon {
+  font-size: 42px;
+  font-weight: bold;
+  animation: blink 1s infinite;
+  color: #ff1a1a;
+}
+.alert-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #ff1a1a;
+}
+.alert-description {
+  margin-top: 6px;
+  color: white;
+}
+// @keyframes pulseAlert {
+//   0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+//   50% { box-shadow: 0 0 35px rgba(255, 0, 0, 0.9); }
+//   100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
+// }
+// @keyframes blink {
+//   50% { opacity: 0.3; }
+// }
+
+
+// HOME - POST LAYOUT
+.preview-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.post-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.badge-active {
+  padding: 0.5rem 1rem;
+  background: #00dd00;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+}
+
+
+// POST CARD
+.card-wrapper:hover {
+  background: transparent !important;
+  box-shadow: 0 0 20px rgba(0, 255, 0);
+  border: 1px solid rgb(0, 255, 0);
+}
+// DEACTIVATE GRAY HOVER
+.card-wrapper:hover::before,
+.card-wrapper:hover::after {
+  display: none;
+}
+.post-preview:hover {
+  background: transparent !important;
+}
+.card-wrapper:hover .shimmer,
+.card-wrapper:hover .mask,
+.post-preview:hover .shimmer,
+.post-preview:hover .mask {
+  display: none !important;
+  opacity: 0 !important;
+}
+.card-wrapper::before,
+.card-wrapper::after,
+.post-preview::before,
+.post-preview::after {
+  display: none !important;
+}

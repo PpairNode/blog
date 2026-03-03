@@ -2,55 +2,67 @@
 layout: default
 ---
 
+<div class="custom-header">
+  <div class="title-badges-container">
+    <h1 class="hacker-title">
+      [{{ page.title }}]
+    </h1>
+
+    <div class="machine-info">
+      {% if page.os %}
+      <span class="badge os-{{ page.os | downcase }}">
+        <span class="badge-icon">{% if page.os == "Windows" %}▣{% else %}▶{% endif %}</span>
+        {{ page.os | upcase }}
+      </span>
+      {% endif %}
+      {% if page.difficulty %}
+      <span class="badge difficulty-{{ page.difficulty | downcase }}">
+        {{ page.difficulty | upcase }}
+      </span>
+      {% endif %}
+    </div>
+  </div>
+
+  <p class="terminal-date">
+    <span class="prompt">
+      {% if page.pawned == "root" %}
+        root@htb:~#
+      {% elsif page.pawned == "user" %}
+        user@htb:~$
+      {% elsif page.pawned == "foothold" %}
+        foothold$
+      {% else %}
+        >
+      {% endif %}
+    </span>
+    {{ page.date | date: "%B %d, %Y" }}
+  </p>
+
+  {% if page.description %}
+  <p class="description terminal-text">{{ page.description }}</p>
+  {% endif %}
+
+  {% if page.image.base %}
+  <div class="custom-header-image-container no-popup">
+    <img src="{{page.image.base}}/default_pawned.png" class="custom-header-image-container-image">
+  </div>
+  {% endif %}
+</div>
+
 {{ content }}
 
 {% if page.active %}
-<div style="
-  margin-top:60px;
-  padding:25px;
-  border-radius:12px;
-  background:#1a0000;
-  border:2px solid #ff1a1a;
-  box-shadow:0 0 25px rgba(255,0,0,0.6);
-  animation:pulseAlert 2s infinite;
-">
-  <div style="
-    display:flex;
-    align-items:center;
-    gap:20px;
-    color:#ff4d4d;
-  ">
-    <div style="
-      font-size:42px;
-      font-weight:bold;
-      animation:blink 1s infinite;
-    ">⚠</div>
-
-    <div>
-      <div style="
-        font-size:18px;
-        letter-spacing:2px;
-        font-weight:bold;
-        color:#ff1a1a;
-      ">
-        RED ALERT — ACTIVE MACHINE
-      </div>
-      <div style="margin-top:6px;color:#ff9999;">
+<div class="alert-active-machine">
+  <div class="alert-content">
+    <div class="alert-icon">⚠</div>
+    <div class="alert-text">
+      <div class="alert-title">RED ALERT — ACTIVE MACHINE</div>
+      <div class="alert-description">
         This Hack The Box machine is still active.<br>
         The full write-up will be published after retirement.
       </div>
     </div>
   </div>
 </div>
-
-<style>
-@keyframes pulseAlert {
-  0% { box-shadow:0 0 10px rgba(255,0,0,0.3); }
-  50% { box-shadow:0 0 35px rgba(255,0,0,0.9); }
-  100% { box-shadow:0 0 10px rgba(255,0,0,0.3); }
-}
-@keyframes blink {
-  50% { opacity:0.3; }
-}
 </style>
 {% endif %}
