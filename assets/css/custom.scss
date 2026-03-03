@@ -270,7 +270,7 @@
 
 // SIDEBAR STYLING
 #sidebar {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--sidebar-bg-dark) 100%);
 }
 .nav-item {
   transition: all 0.3s ease;
@@ -308,4 +308,46 @@
 .sidebar-bottom button:hover {
   color: #00ff00 !important;
   transform: scale(1.2);
+}
+
+// RIGHT PANEL STYLING
+#panel-wrapper {
+  background: var(--main-bg);
+  border-left: 2px solid rgba(0, 255, 0, 0.2);
+  padding: 1.5rem;
+}
+.panel-heading {
+  font-family: 'Courier New', monospace;
+  color: #00ff00 !important;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+#access-lastmod a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+  padding-left: 0.5rem;
+  display: block;
+}
+#access-lastmod a:hover {
+  color: #00ff00 !important;
+  border-left: 2px solid #00ff00;
+  padding-left: 1rem;
+  text-decoration: none;
+}
+.post-tag {
+  background: rgba(0, 255, 0, 0.1) !important;
+  border: 1px solid #00ff00 !important;
+  color: #00ff00 !important;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+.post-tag:hover {
+  background: rgba(0, 255, 0, 0.2) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+  transform: translateY(-2px);
 }
