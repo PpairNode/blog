@@ -1,32 +1,13 @@
 ---
-title: WingData (R) - HTB
+title: WingData - HTB
 date: 2026-02-14
 categories: [WriteUps, HTB]
 tags: [HTB, linux, web, privesc]
 image:
-  path: /assets/img/posts/htb/wingdata/wingdata_full.png
+  base: /assets/img/posts/htb/wingdata
+active: true
+difficulty: easy
+os: linux
+description: "WingData is the 3rd machine of HackTheBox Season 10."
+pawned: root
 ---
-
-
-# Overview
-WingData is the 3rd machine of HackTheBox Season 10.
-> Level: easy
-
-> OS: linux
-
-# Scan
-## Nmap
-First scanning all ports with a rapid SYN scan:
-```bash
-sudo nmap -n -sS -Pn -p- -oN scan.txt <ip>
-PORT      STATE SERVICE
-22/tcp    open  ssh
-80/tcp    open  http
-```
-
-Adding to `/etc/hosts` our target
-```bash
-echo '<ip> wingdata.htb' | sudo tee /etc/hosts -a
-```
-
-**The machine is still active so this post is not yet available!**

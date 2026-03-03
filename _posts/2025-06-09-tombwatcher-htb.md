@@ -1,18 +1,17 @@
 ---
-title: TombWatcher (R) - HTB
+title: TombWatcher - HTB
 date: 2025-06-09
 categories: [WriteUps, HTB]
 tags: [HTB, windows, AD, privesc]
 image:
-  path: /assets/img/posts/htb/tombwatcher/tombwatcher_full.png
+  base: /assets/img/posts/htb/tombwatcher
+active: false
+difficulty: medium
+os: windows
+description: "TombWatcher is the 4th machine of HackTheBox Season 8."
+pawned: root
 ---
 
-
-# Overview
-TombWatcher is the 4th machine of HackTheBox Season 8.
-> Level: medium
-
-> OS: windows
 
 # Scan
 ```bash
