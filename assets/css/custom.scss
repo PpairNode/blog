@@ -390,6 +390,49 @@
   padding-left: 1rem;
   text-decoration: none;
 }
+.card-header a,
+#categories .card-header a {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+.card-header a:hover,
+#categories .card-header a:hover {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+}
+.category-trigger {
+  color: var(--text-muted-color) !important;
+}
+.category-trigger:hover {
+  color: var(--text-color) !important;
+}
+#categories .card-header a,
+#categories .card-header a:link,
+#categories .card-header a:visited,
+#categories .card-header a:active,
+#categories .card-header a:focus {
+  color: var(--text-color) !important;
+  text-decoration: none !important;
+  font-weight: bold;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+#categories .card-header:hover a,
+#categories .card-header a:hover,
+#categories .card-header a:hover:link,
+#categories .card-header a:hover:visited {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+  background: transparent !important;
+}
+#categories .card-header a * {
+  color: inherit !important;
+}
+#categories .card-header a::selection {
+  background: rgba(0, 255, 0, 0.2) !important;
+  color: #00ff00 !important;
+}
 
 // ARCHIVES
 #archives .year {
@@ -660,3 +703,23 @@ ul.content li a * {
   background: transparent !important;
 }
 
+// LINKS IN MARKDOWN CONTENT (articles, about, posts)
+article a,
+.content a,
+main a {
+  color: #00ff00 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+article a:hover,
+.content a:hover,
+main a:hover {
+  border-bottom: 1px solid #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+.card-wrapper a,
+ul.content li a {
+  border-bottom: none !important;
+  text-shadow: none !important;
+}
