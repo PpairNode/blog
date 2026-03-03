@@ -13,6 +13,6 @@ pawned: root
 ---
 
 # Info
-Machine Information
+Machine Information:
 As is common in real life Windows penetration tests, you will start the Eighteen box with credentials for the following account: kevin / iNa2we6haRj2gaw!
 

