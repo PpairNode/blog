@@ -3,14 +3,21 @@
 
 @use 'main';
 
-// MODE DARK/LIGHT - Variables de couleurs
+// MODE DARK/LIGHT
+// MODE DARK
+:root {
+  --hacker-green: #00ff00;
+  --hacker-green-dim: rgba(0, 255, 0, 0.7);
+  --hacker-green-bg: rgba(0, 255, 0, 0.1);
+  --hacker-green-bg-hover: rgba(0, 255, 0, 0.2);
+}
 :root[data-mode="dark"] {
   --hacker-green: #00ff00;
   --hacker-green-dim: rgba(0, 255, 0, 0.7);
   --hacker-green-bg: rgba(0, 255, 0, 0.1);
   --hacker-green-bg-hover: rgba(0, 255, 0, 0.2);
 }
-
+// MODE LIGHT
 :root[data-mode="light"] {
   --hacker-green: #00aa00;
   --hacker-green-dim: rgba(0, 170, 0, 0.7);
