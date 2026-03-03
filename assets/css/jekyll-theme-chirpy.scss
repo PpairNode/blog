@@ -75,7 +75,6 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 2px solid;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -224,4 +223,31 @@
 .card-text.post-content {
   color: var(--text-muted-color) !important;
   opacity: 0.9;
+}
+
+// PROJECT BADGE
+.badge-language {
+  background: #000;
+  color: #fcc624;
+  border: 2px solid #fcc624;
+}
+.badge-status-active {
+  background: #000;
+  color: #00dd00;
+  border: 2px solid #00dd00;
+}
+.badge-status-archived {
+  background: #000;
+  color: #888;
+  border: 2px solid #888;
+}
+.badge-lang-rust { background: #000; color: #ce422b; border-color: solid #ce422b; }
+.badge-lang-python { background: #000; color: #3776ab; border-color: solid #3776ab; }
+.badge-lang-shell { background: #000; color: #89e051; border-color: solid #89e051; }
+.badge-lang-c { background: #000; color: #555555; border-color: solid #555555; }
+.badge-lang-go { background: #000; color: #00add8; border-color: solid #00add8; }
+.badge-lang-js { background: #000; color: #f7df1e; border-color: solid #f7df1e; }
+// PROJECT MARGIN
+#project-list .card-wrapper {
+  margin-bottom: 1rem;
 }
