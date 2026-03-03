@@ -3,26 +3,38 @@
 
 @use 'main';
 
-
 // DEACTIVATE IMAGE GLOW (automatic with chirpy)
 .shimmer::before {
   background: none !important;
 }
 
+// DEACTIVATE IMAGE GREY BACKGROUND (automatic with chirpy)
+.no-popup .popup {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+.no-popup .shimmer::before {
+  display: none !important;
+}
+.no-popup a.popup {
+  pointer-events: none;
+}
+
 // HEADER
 .custom-header-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem 0;
-    padding: 0;
-    background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 0;
+  background: transparent;
 }
 .custom-header-image-container-image {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
-    object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  object-fit: cover;
 }
 .custom-header {
   display: block;
@@ -63,7 +75,6 @@
   display: flex;
   gap: 0.75rem;
 }
-
 
 // BADGE VISUAL
 .badge {
@@ -113,20 +124,38 @@
   box-shadow: 0 0 8px rgba(252, 198, 36, 0.2);
 }
 
+// PROJECT BADGE
+.badge-language {
+  background: #000;
+  color: #fcc624;
+  border: 2px solid #fcc624;
+}
+.badge-status-active {
+  background: #000;
+  color: #00dd00;
+  border: 2px solid #00dd00;
+}
+.badge-status-archived {
+  background: #000;
+  color: #888;
+  border: 2px solid #888;
+}
+.badge-lang-rust { background: #000; color: #ce422b; border-color: #ce422b; }
+.badge-lang-python { background: #000; color: #3776ab; border-color: #3776ab; }
+.badge-lang-shell { background: #000; color: #89e051; border-color: #89e051; }
+.badge-lang-c { background: #000; color: #555555; border-color: #555555; }
+.badge-lang-go { background: #000; color: #00add8; border-color: #00add8; }
+.badge-lang-js { background: #000; color: #f7df1e; border-color: #f7df1e; }
 
-// DEACTIVATE IMAGE GREY BACKGROUND (automatic with chirpy)
-.no-popup .popup {
-    background: transparent !important;
-    padding: 0 !important;
-    box-shadow: none !important;
+.badge-active {
+  background: #00dd00;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
 }
-.no-popup .shimmer::before {
-    display: none !important;
-}
-.no-popup a.popup {
-    pointer-events: none;
-}
-
 
 // FOOTER ALERT
 .alert-active-machine {
@@ -169,7 +198,6 @@
 //   50% { opacity: 0.3; }
 // }
 
-
 // HOME - POST LAYOUT
 .preview-img {
   width: 100%;
@@ -181,23 +209,38 @@
   gap: 0.5rem;
   flex-wrap: wrap;
 }
-.badge-active {
-  padding: 0.5rem 1rem;
-  background: #00dd00;
-  color: white;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.85rem;
-  font-weight: bold;
-  border: none;
-  box-shadow: none;
+.card-text.post-content {
+  color: var(--text-muted-color) !important;
+  opacity: 0.9;
 }
 
-
 // POST CARD
+.card-wrapper {
+  transition: all 0.3s ease;
+  background: transparent;
+  box-shadow: none;
+  border: none !important;
+}
+.card-wrapper::before,
+.card-wrapper::after,
+.post-preview::before,
+.post-preview::after {
+  display: none !important;
+}
+.card-wrapper a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  color: var(--text-color) !important;
+}
+.card-wrapper .card-title {
+  color: var(--text-color) !important;
+}
+
+// CARD HOVER
 .card-wrapper:hover {
   background: transparent !important;
-  box-shadow: 0 0 20px rgba(0, 255, 0);
-  border: 1px solid rgb(0, 255, 0);
+  box-shadow: 0 0 20px rgba(0, 255, 0) !important;
+  border: 1px solid rgb(0, 255, 0) !important;
 }
 // DEACTIVATE GRAY HOVER
 .card-wrapper:hover::before,
@@ -214,39 +257,12 @@
   display: none !important;
   opacity: 0 !important;
 }
-.card-wrapper::before,
-.card-wrapper::after,
-.post-preview::before,
-.post-preview::after {
-  display: none !important;
-}
-.card-text.post-content {
-  color: var(--text-muted-color) !important;
-  opacity: 0.9;
+.card-wrapper:hover a,
+.card-wrapper:hover .card-title {
+  color: var(--heading-color) !important;
+  border-bottom: none !important;
 }
 
-// PROJECT BADGE
-.badge-language {
-  background: #000;
-  color: #fcc624;
-  border: 2px solid #fcc624;
-}
-.badge-status-active {
-  background: #000;
-  color: #00dd00;
-  border: 2px solid #00dd00;
-}
-.badge-status-archived {
-  background: #000;
-  color: #888;
-  border: 2px solid #888;
-}
-.badge-lang-rust { background: #000; color: #ce422b; border-color: solid #ce422b; }
-.badge-lang-python { background: #000; color: #3776ab; border-color: solid #3776ab; }
-.badge-lang-shell { background: #000; color: #89e051; border-color: solid #89e051; }
-.badge-lang-c { background: #000; color: #555555; border-color: solid #555555; }
-.badge-lang-go { background: #000; color: #00add8; border-color: solid #00add8; }
-.badge-lang-js { background: #000; color: #f7df1e; border-color: solid #f7df1e; }
 // PROJECT MARGIN
 #project-list .card-wrapper {
   margin-bottom: 1rem;
