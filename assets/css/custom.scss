@@ -267,3 +267,45 @@
 #project-list .card-wrapper {
   margin-bottom: 1rem;
 }
+
+// SIDEBAR STYLING
+#sidebar {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+.nav-item {
+  transition: all 0.3s ease;
+}
+.nav-item .nav-link {
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+.nav-item .nav-link:hover {
+  background: rgba(0, 255, 0, 0.1);
+  border-left: 3px solid #00ff00;
+  color: #00ff00 !important;
+}
+.nav-item.active .nav-link {
+  background: rgba(0, 255, 0, 0.15);
+  border-left: 3px solid #00ff00;
+  color: #00ff00 !important;
+}
+.nav-item .nav-link i {
+  color: #00ff00;
+}
+#avatar img {
+  border: 2px solid #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+.site-title {
+  color: #00ff00 !important;
+  font-family: 'Courier New', monospace;
+}
+.sidebar-bottom a,
+.sidebar-bottom button {
+  transition: all 0.3s ease;
+}
+.sidebar-bottom a:hover,
+.sidebar-bottom button:hover {
+  color: #00ff00 !important;
+  transform: scale(1.2);
+}
