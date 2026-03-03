@@ -3,6 +3,21 @@
 
 @use 'main';
 
+// MODE DARK/LIGHT - Variables de couleurs
+:root[data-mode="dark"] {
+  --hacker-green: #00ff00;
+  --hacker-green-dim: rgba(0, 255, 0, 0.7);
+  --hacker-green-bg: rgba(0, 255, 0, 0.1);
+  --hacker-green-bg-hover: rgba(0, 255, 0, 0.2);
+}
+
+:root[data-mode="light"] {
+  --hacker-green: #00aa00;
+  --hacker-green-dim: rgba(0, 170, 0, 0.7);
+  --hacker-green-bg: rgba(0, 170, 0, 0.1);
+  --hacker-green-bg-hover: rgba(0, 170, 0, 0.2);
+}
+
 // DEACTIVATE IMAGE GLOW (automatic with chirpy)
 .shimmer::before {
   background: none !important;
@@ -49,7 +64,7 @@
   font-family: 'Courier New', monospace;
   font-size: 2rem;
   font-weight: bold;
-  color: #00ee00;
+  color: var(--hacker-green);
   text-shadow: none;
   margin: 0;
 }
@@ -66,7 +81,7 @@
 .terminal-text {
   font-family: 'Courier New', monospace;
   color: #ccc;
-  border-left: 3px solid #00ff00;
+  border-left: 3px solid var(--hacker-green);
   padding-left: 1rem;
   margin: 1rem 0;
 }
@@ -164,7 +179,6 @@
   border-radius: 12px;
   background: #1a0000;
   border: 2px solid #ff1a1a;
-  // box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
   animation: pulseAlert 2s infinite;
 }
 .alert-content {
@@ -189,14 +203,6 @@
   margin-top: 6px;
   color: white;
 }
-// @keyframes pulseAlert {
-//   0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
-//   50% { box-shadow: 0 0 35px rgba(255, 0, 0, 0.9); }
-//   100% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); }
-// }
-// @keyframes blink {
-//   50% { opacity: 0.3; }
-// }
 
 // HOME - POST LAYOUT
 .preview-img {
@@ -239,10 +245,9 @@
 // CARD HOVER
 .card-wrapper:hover {
   background: transparent !important;
-  box-shadow: 0 0 20px rgba(0, 255, 0) !important;
-  border: 1px solid rgb(0, 255, 0) !important;
+  box-shadow: 0 0 20px var(--hacker-green) !important;
+  border: 1px solid var(--hacker-green) !important;
 }
-// DEACTIVATE GRAY HOVER
 .card-wrapper:hover::before,
 .card-wrapper:hover::after {
   display: none;
@@ -280,24 +285,24 @@
   transition: all 0.3s ease;
 }
 .nav-item .nav-link:hover {
-  background: rgba(0, 255, 0, 0.1);
-  border-left: 3px solid #00ff00;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg);
+  border-left: 3px solid var(--hacker-green);
+  color: var(--hacker-green) !important;
 }
 .nav-item.active .nav-link {
-  background: rgba(0, 255, 0, 0.15);
-  border-left: 3px solid #00ff00;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg-hover);
+  border-left: 3px solid var(--hacker-green);
+  color: var(--hacker-green) !important;
 }
 .nav-item .nav-link i {
-  color: #00ff00;
+  color: var(--hacker-green);
 }
 #avatar img {
-  border: 2px solid #00ff00;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  border: 2px solid var(--hacker-green);
+  box-shadow: 0 0 15px var(--hacker-green-bg-hover);
 }
 .site-title {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   font-family: 'Courier New', monospace;
 }
 .sidebar-bottom a,
@@ -306,23 +311,23 @@
 }
 .sidebar-bottom a:hover,
 .sidebar-bottom button:hover {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   transform: scale(1.2);
 }
 
 // RIGHT PANEL STYLING
 #panel-wrapper {
   background: var(--main-bg);
-  border-left: 2px solid rgba(0, 255, 0, 0.2);
+  border-left: 2px solid var(--hacker-green-bg);
   padding: 1.5rem;
 }
 .panel-heading {
   font-family: 'Courier New', monospace;
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  border-bottom: 2px solid #00ff00;
+  border-bottom: 2px solid var(--hacker-green);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -334,21 +339,21 @@
   display: block;
 }
 #access-lastmod a:hover {
-  color: #00ff00 !important;
-  border-left: 2px solid #00ff00;
+  color: var(--hacker-green) !important;
+  border-left: 2px solid var(--hacker-green);
   padding-left: 1rem;
   text-decoration: none;
 }
 .post-tag {
-  background: rgba(0, 255, 0, 0.1) !important;
-  border: 1px solid #00ff00 !important;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg) !important;
+  border: 1px solid var(--hacker-green) !important;
+  color: var(--hacker-green) !important;
   transition: all 0.3s ease;
   font-family: 'Courier New', monospace;
 }
 .post-tag:hover {
-  background: rgba(0, 255, 0, 0.2) !important;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+  background: var(--hacker-green-bg-hover) !important;
+  box-shadow: 0 0 10px var(--hacker-green-dim);
   transform: translateY(-2px);
 }
 
@@ -357,23 +362,23 @@
 #page-tag h1,
 #archives h1 {
   font-family: 'Courier New', monospace;
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   text-transform: uppercase;
   letter-spacing: 3px;
-  border-bottom: 3px solid #00ff00;
+  border-bottom: 3px solid var(--hacker-green);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
 .card.categories,
 .card.tags {
   background: var(--card-bg) !important;
-  border: 1px solid rgba(0, 255, 0, 0.2) !important;
+  border: 1px solid var(--hacker-green-bg) !important;
   transition: all 0.3s ease;
 }
 .card.categories:hover,
 .card.tags:hover {
-  border-color: #00ff00 !important;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  border-color: var(--hacker-green) !important;
+  box-shadow: 0 0 20px var(--hacker-green-bg-hover);
   transform: translateY(-5px);
 }
 .categories a,
@@ -385,8 +390,8 @@
 }
 .categories a:hover,
 .tags a:hover {
-  color: #00ff00 !important;
-  border-left: 2px solid #00ff00;
+  color: var(--hacker-green) !important;
+  border-left: 2px solid var(--hacker-green);
   padding-left: 1rem;
   text-decoration: none;
 }
@@ -398,7 +403,7 @@
 }
 .card-header a:hover,
 #categories .card-header a:hover {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   text-decoration: none !important;
 }
 .category-trigger {
@@ -422,7 +427,7 @@
 #categories .card-header a:hover,
 #categories .card-header a:hover:link,
 #categories .card-header a:hover:visited {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   text-decoration: none !important;
   background: transparent !important;
 }
@@ -430,16 +435,16 @@
   color: inherit !important;
 }
 #categories .card-header a::selection {
-  background: rgba(0, 255, 0, 0.2) !important;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg) !important;
+  color: var(--hacker-green) !important;
 }
 
 // ARCHIVES
 #archives .year {
   font-family: 'Courier New', monospace;
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   font-size: 1.5rem;
-  border-left: 4px solid #00ff00;
+  border-left: 4px solid var(--hacker-green);
   padding-left: 1rem;
   margin: 2rem 0 1rem 0;
 }
@@ -452,16 +457,16 @@
   transition: all 0.3s ease;
 }
 #archives li a:hover {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   padding-left: 0.5rem;
   text-decoration: none;
 }
 
 // TAGS
 .tag-cloud a {
-  background: rgba(0, 255, 0, 0.1) !important;
-  border: 1px solid #00ff00 !important;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg) !important;
+  border: 1px solid var(--hacker-green) !important;
+  color: var(--hacker-green) !important;
   font-family: 'Courier New', monospace;
   transition: all 0.3s ease;
   display: inline-block;
@@ -469,15 +474,15 @@
   padding: 0.5rem 1rem;
 }
 .tag-cloud a:hover {
-  background: rgba(0, 255, 0, 0.2) !important;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+  background: var(--hacker-green-bg-hover) !important;
+  box-shadow: 0 0 10px var(--hacker-green-dim);
   transform: scale(1.05);
 }
 #tags .tag-item,
 .tag-item a {
-  background: rgba(0, 255, 0, 0.1) !important;
-  border: 2px solid #00ff00 !important;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg) !important;
+  border: 2px solid var(--hacker-green) !important;
+  color: var(--hacker-green) !important;
   font-family: 'Courier New', monospace !important;
   font-size: 1rem !important;
   padding: 0.75rem 1.5rem !important;
@@ -486,14 +491,14 @@
 }
 #tags .tag-item:hover,
 .tag-item a:hover {
-  background: rgba(0, 255, 0, 0.25) !important;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5) !important;
+  background: var(--hacker-green-bg-hover) !important;
+  box-shadow: 0 0 15px var(--hacker-green-dim) !important;
   transform: scale(1.05) !important;
 }
 a.tag {
-  background: rgba(0, 255, 0, 0.1) !important;
-  border: 2px solid #00ff00 !important;
-  color: #00ff00 !important;
+  background: var(--hacker-green-bg) !important;
+  border: 2px solid var(--hacker-green) !important;
+  color: var(--hacker-green) !important;
   font-family: 'Courier New', monospace !important;
   padding: 0.75rem 1.5rem !important;
   transition: all 0.3s ease !important;
@@ -502,24 +507,22 @@ a.tag {
   margin: 0.5rem !important;
   text-transform: uppercase !important;
 }
-
 a.tag:hover {
-  background: rgba(0, 255, 0, 0.25) !important;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5) !important;
+  background: var(--hacker-green-bg-hover) !important;
+  box-shadow: 0 0 15px var(--hacker-green-dim) !important;
   transform: scale(1.05) !important;
 }
-
 a.tag .text-muted {
-  color: rgba(0, 255, 0, 0.6) !important;
+  color: var(--hacker-green-dim) !important;
 }
 
-// BREADCRUMB (liens en haut de page)
+// BREADCRUMB
 #breadcrumb {
   font-family: 'Courier New', monospace !important;
 }
 #breadcrumb span,
 #breadcrumb a {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   transition: all 0.3s ease;
   text-decoration: none !important;
   text-transform: uppercase;
@@ -527,12 +530,12 @@ a.tag .text-muted {
   letter-spacing: 1px;
 }
 #breadcrumb a:hover {
-  color: #00ff00 !important;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  color: var(--hacker-green) !important;
+  text-shadow: 0 0 10px var(--hacker-green-dim);
 }
 #breadcrumb::before {
   content: "> ";
-  color: #00ff00;
+  color: var(--hacker-green);
   margin-right: 0.5rem;
 }
 
@@ -541,10 +544,10 @@ a.tag .text-muted {
 #page-category {
   h1 {
     font-family: 'Courier New', monospace;
-    color: #00ff00 !important;
+    color: var(--hacker-green) !important;
     text-transform: uppercase;
     letter-spacing: 3px;
-    border-bottom: 3px solid #00ff00;
+    border-bottom: 3px solid var(--hacker-green);
     padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
@@ -552,14 +555,14 @@ a.tag .text-muted {
 .category .list-group-item,
 #page-category .list-group-item {
   background: var(--card-bg) !important;
-  border: 1px solid rgba(0, 255, 0, 0.2) !important;
+  border: 1px solid var(--hacker-green-bg) !important;
   transition: all 0.3s ease;
   margin-bottom: 1rem;
 }
 .category .list-group-item:hover,
 #page-category .list-group-item:hover {
-  border-color: #00ff00 !important;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  border-color: var(--hacker-green) !important;
+  box-shadow: 0 0 15px var(--hacker-green-bg-hover);
   transform: translateX(5px);
 }
 .category .list-group-item a,
@@ -569,7 +572,7 @@ a.tag .text-muted {
 }
 .category .list-group-item:hover a,
 #page-category .list-group-item:hover a {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
 }
 
 // CATEGORY/TAG SUBPAGES
@@ -579,7 +582,7 @@ ul.content {
 }
 ul.content li {
   background: var(--card-bg);
-  border: 1px solid rgba(0, 255, 0, 0.2);
+  border: 1px solid var(--hacker-green-bg);
   border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -591,16 +594,16 @@ ul.content li::before {
   display: none;
 }
 ul.content li:hover {
-  border-color: #00ff00;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  border-color: var(--hacker-green);
+  box-shadow: 0 0 15px var(--hacker-green-bg-hover);
   transform: translateX(10px);
 }
-ul.content li a,
-ul.content li a:link,
-ul.content li a:visited {
+ul.content li a {
   color: var(--text-color) !important;
   text-decoration: none !important;
   font-weight: bold;
+  background: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 ul.content li a::before {
   content: '';
@@ -609,19 +612,22 @@ ul.content li a::before {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1; // All the <li> become clickable
+  z-index: 1;
+}
+ul.content li a * {
+  color: inherit !important;
 }
 ul.content li:hover a,
-ul.content li:hover a:link,
-ul.content li:hover a:visited,
-ul.content li a:hover,
-ul.content li a:hover:link,
-ul.content li a:hover:visited {
-  color: #00ff00 !important;
+ul.content li a:hover {
+  color: var(--hacker-green) !important;
   text-decoration: none !important;
 }
+ul.content li a::selection {
+  background: var(--hacker-green-bg) !important;
+  color: var(--hacker-green) !important;
+}
 ul.content li .dash {
-  border-bottom: 1px dashed rgba(0, 255, 0, 0.3);
+  border-bottom: 1px dashed var(--hacker-green-bg);
   margin: 0 1rem;
 }
 ul.content li time {
@@ -631,83 +637,14 @@ ul.content li time {
   z-index: 2;
 }
 ul.content li:hover time {
-  color: rgba(0, 255, 0, 0.7);
-}
-ul.content li a,
-ul.content li a:link,
-ul.content li a:visited,
-ul.content li a:active,
-ul.content li a:focus {
-  color: var(--text-color) !important;
-  text-decoration: none !important;
-  font-weight: bold;
-}
-ul.content li:hover a,
-ul.content li:hover a:link,
-ul.content li:hover a:visited,
-ul.content li:hover a:active,
-ul.content li:hover a:focus,
-ul.content li a:hover,
-ul.content li a:hover:link,
-ul.content li a:hover:visited,
-ul.content li a:hover:active,
-ul.content li a:hover:focus {
-  color: #00ff00 !important;
-  text-decoration: none !important;
-}
-ul.content li a * {
-  color: inherit !important;
-}
-#page-category ul.content li a,
-#page-category ul.content li a:link,
-#page-category ul.content li a:visited,
-#page-category ul.content li a:active,
-#page-category ul.content li a:focus {
-  color: var(--text-color) !important;
-  text-decoration: none !important;
-  font-weight: bold;
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-#page-category ul.content li:hover a,
-#page-category ul.content li:hover a:link,
-#page-category ul.content li:hover a:visited,
-#page-category ul.content li:hover a:active,
-#page-category ul.content li:hover a:focus,
-#page-category ul.content li a:hover {
-  color: #00ff00 !important;
-  text-decoration: none !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-#page-category ul.content li a,
-#page-category ul.content li a:hover {
-  color: var(--text-color) !important;
-  text-decoration: none !important;
-  font-weight: bold;
-  background: transparent !important;
-  -webkit-tap-highlight-color: transparent !important;
-}
-#page-category ul.content li a::selection {
-  background: rgba(0, 255, 0, 0.2) !important;
-  color: #00ff00 !important;
-}
-#page-category ul.content li:hover a,
-#page-category ul.content li a:hover {
-  color: #00ff00 !important;
-  text-decoration: none !important;
-  background: transparent !important;
+  color: var(--hacker-green-dim);
 }
 
-// LINKS IN MARKDOWN CONTENT (articles, about, posts)
+// LINKS IN MARKDOWN CONTENT
 article a,
 .content a,
 main a {
-  color: #00ff00 !important;
+  color: var(--hacker-green) !important;
   text-decoration: none !important;
   transition: all 0.3s ease;
   border-bottom: 1px solid transparent;
@@ -715,8 +652,8 @@ main a {
 article a:hover,
 .content a:hover,
 main a:hover {
-  border-bottom: 1px solid #00ff00;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  border-bottom: 1px solid var(--hacker-green);
+  text-shadow: 0 0 10px var(--hacker-green-dim);
 }
 .card-wrapper a,
 ul.content li a {
