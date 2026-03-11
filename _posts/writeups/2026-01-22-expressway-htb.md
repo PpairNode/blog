@@ -12,7 +12,7 @@ description: "Expressway is the 1st machine of HackTheBox Season 9."
 pawned: root
 ---
 
-# Soulmate
+# Info
 IP: `10.129.11.184`
 
 # Scan
