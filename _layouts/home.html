@@ -11,7 +11,7 @@ layout: page
         <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
           {% if post.image.base %}
             <div class="col-md-5">
-              <img src="{{ post.image.base }}/default_info.png" alt="{{ post.title }}" class="preview-img">
+              <img src="{{ post.image.base | prepend: site.baseurl }}/default_info.png" alt="{{ post.title }}" class="preview-img">
             </div>
           {% endif %}
 
