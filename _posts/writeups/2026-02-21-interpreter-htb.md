@@ -5,7 +5,7 @@ categories: [WriteUps, HTB]
 tags: [HTB, linux, web, privesc, PBKDF2]
 image:
   base: /assets/img/posts/htb/interpreter
-active: true
+active: false
 difficulty: medium
 os: linux
 description: "Interpreter is the 4th machine of HackTheBox Season 10."
