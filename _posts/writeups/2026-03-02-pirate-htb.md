@@ -2,7 +2,7 @@
 title: Pirate - HTB
 date: 2026-03-02
 categories: [WriteUps, HTB]
-tags: [HTB, windows, AD, privesc]
+tags: [HTB, windows, AD, privesc, RBCD, constrained-delegation]
 image:
   base: /assets/img/posts/htb/pirate
 active: true
@@ -14,5 +14,7 @@ pawned: root
 
 # Info
 Machine Information:
-As is common in real life pentests, you will start the Pirate box with credentials for the following account pentest / p3nt3st2025!&
+As is common in real life pentests, you will start the Pirate box with credentials:
+
+> Starting credentials: `pentest / p3nt3st2025!&`
 
