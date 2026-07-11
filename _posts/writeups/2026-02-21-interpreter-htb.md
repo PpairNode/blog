@@ -106,8 +106,10 @@ ps aux | grep python
 The script runs as root and listens on `127.0.0.1:54321`. It receives patient XML, validates each field against a regex, then builds and evaluates an f-string:
 
 ```python
+{% raw %}
 template = f"Patient {first} {last} ({gender}), {{datetime.now().year - year_of_birth}} years old..."
 return eval(f"f'''{template}'''")
+{% endraw %}
 ```
 
 The `gender` field passes the regex `^[a-zA-Z0-9._'"(){}=+/]+$` which allows `{`, `}`, `"`, `(`, `)` - enough to embed an arbitrary Python expression. Injecting `{__import__("os").system("/tmp/rev.sh")}` executes code as root.
